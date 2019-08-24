@@ -1,0 +1,11 @@
+<app-header title="Home"></app-header>
+<ion-content padding>
+  <div *ngIf="(authUser$ | async) as authUser; else login">
+    <h1>Secure area</h1>
+    <div><pre>{{authUser | json}}</pre></div>
+  </div>
+  <ng-template #login>
+    <h1>Authentication</h1>
+    <app-login></app-login>
+  </ng-template>
+</ion-content>

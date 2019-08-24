@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+  <ion-list inset="false">
+    <ion-item>
+      <ion-label position="stacked">Email:</ion-label>
+      <ion-input inputmode="email" type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password:</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" (click)="doSignin()" [disabled]="!form.valid">Authenticate</ion-button>
+</form>
